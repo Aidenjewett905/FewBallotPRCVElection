@@ -1,0 +1,3 @@
+Number_of_Candidates = 3
+Candidates_File_Path = candidates.txt
+Ballots_File_Path = ballots.txt
