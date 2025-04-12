@@ -1,0 +1,144 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Page-1" id="zyUK4oMNR9Uw6AZ7cn7n">
+    <mxGraphModel dx="1630" dy="544" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-1" target="CO-HhrcVQnnyDwoUcE4C-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-1" value="Start Program" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#008a00;fontColor=#ffffff;strokeColor=#005700;" vertex="1" parent="1">
+          <mxGeometry x="365" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-2" target="CO-HhrcVQnnyDwoUcE4C-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-2" target="CO-HhrcVQnnyDwoUcE4C-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-2" value="Get Info from settings file" style="whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-4" value="Throws IOException" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="585" y="220" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-6" target="CO-HhrcVQnnyDwoUcE4C-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-6" target="CO-HhrcVQnnyDwoUcE4C-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-6" value="Get Ballots from ballots file" style="whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-8" value="Throws IOException" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="585" y="360" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-10" target="CO-HhrcVQnnyDwoUcE4C-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-17" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-10" target="CO-HhrcVQnnyDwoUcE4C-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-10" value="Get list of Available Candidates from candidates file" style="whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="510" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-12" value="Throws IOException" style="ellipse;whiteSpace=wrap;html=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="585" y="500" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-16" target="CO-HhrcVQnnyDwoUcE4C-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-16" value="Add Total Votes and First Round Votes to candidates" style="whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="650" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-23" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-20" target="CO-HhrcVQnnyDwoUcE4C-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-32" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-20" target="CO-HhrcVQnnyDwoUcE4C-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-20" value="Has A Candidate won?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="385" y="780" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-22" target="CO-HhrcVQnnyDwoUcE4C-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-22" value="Remove candidate(s) from list and remove ballots that counted towards that candidate" style="whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="950" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-26" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-24" target="CO-HhrcVQnnyDwoUcE4C-20">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="625" y="820" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-28" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Yes&lt;/div&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-24" target="CO-HhrcVQnnyDwoUcE4C-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-24" value="Have all seats been won?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="585" y="940" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-27" value="Output the results" style="whiteSpace=wrap;html=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="725" y="950" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-34" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-31" target="CO-HhrcVQnnyDwoUcE4C-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-41" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-31" target="CO-HhrcVQnnyDwoUcE4C-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-31" value="Are There multiple tied last place candidates?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="780" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-36" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-33" target="CO-HhrcVQnnyDwoUcE4C-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-43" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-33" target="CO-HhrcVQnnyDwoUcE4C-40">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="105" y="745" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-33" value="Are the candidates tied in total ballot votes?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="65" y="780" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-37" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-35" target="CO-HhrcVQnnyDwoUcE4C-22">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-55" y="980" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-39" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-35" target="CO-HhrcVQnnyDwoUcE4C-38">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-35" value="Can all tied candidates win?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-95" y="780" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-44" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-38" target="CO-HhrcVQnnyDwoUcE4C-40">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-46" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-38" target="CO-HhrcVQnnyDwoUcE4C-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-38" value="Does at least 1 tied candidate have to win for all seats to be filled?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#6a00ff;strokeColor=#3700CC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-95" y="670" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="CO-HhrcVQnnyDwoUcE4C-40" target="CO-HhrcVQnnyDwoUcE4C-20">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="420" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-40" value="Remove Last Place Candidate(s), Redistribute ballots for removed candidate(s)" style="whiteSpace=wrap;html=1;fillColor=#0050ef;strokeColor=#001DBC;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="217.5" y="700" width="95" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="CO-HhrcVQnnyDwoUcE4C-45" value="Call Runoff Election, Put all remaining seats in output file as &quot;Tied&quot;" style="whiteSpace=wrap;html=1;fillColor=#a20025;strokeColor=#6F0000;fontColor=#ffffff;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="-115" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
