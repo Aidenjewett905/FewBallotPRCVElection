@@ -4,8 +4,9 @@ public class Ballot {
 	
 	public static int numOfBallots = 0;
 	private ArrayList<String> rankedVotes; //Ordered list of the ranked candidates from 1st to last
-	private int choice = 1; //Which of the ranked choices is this ballot currently on, this changes if the candidate before this choice were eliminated
+	private int choice = 0; //Which of the ranked choices is this ballot currently on, this changes if the candidate before this choice were eliminated
 	private boolean isEliminated;
+	private boolean isAssigned;
 	
 	/**
 	 * This constructor takes an arraylist of type String as a parameter and creates a ballot with those candidates on it.
@@ -19,6 +20,7 @@ public class Ballot {
 		}
 		numOfBallots++;
 		isEliminated = false;
+		isAssigned = false;
 	}
 	
 	/**
@@ -54,11 +56,28 @@ public class Ballot {
 	}
 	
 	/**
+	 * This method checks if the ballot has been assigned to a candidate
+	 * @return if the ballot has been assigned to a candidate
+	 */
+	public boolean isAssigned() {
+		return isAssigned;
+	}
+	
+	/**
 	 * Eliminates this ballot
 	 */
 	public void eliminate() {
 		isEliminated = true;
+		setAssignment(false);
 		choice = -1;
+	}
+	
+	/**
+	 * Sets the assignment value of this ballot
+	 * @param isAssigned is this ballot currently assigned to a candidates current votes
+	 */
+	public void setAssignment(boolean isAssigned) {
+		this.isAssigned = isAssigned;
 	}
 	
 	/**
@@ -67,19 +86,49 @@ public class Ballot {
 	 */
 	public void advanceChoice() {
 		choice++;
-		if(choice > rankedVotes.size())
+		if(choice >= rankedVotes.size())
 		{
 			choice = -1;
 			eliminate(); //All candidates this person voted for have been eliminated, so ballot is eliminated.
 		}
+		else
+		{
+			setAssignment(false);
+		}
 	}
 	
 	/**
-	 * This method will return the name of the candidate that is currently chosen
+	 * This method will return the name of the candidate that is currently chosen.
 	 * @return The name of the candidate this ballot counts towards
 	 */
-	public String getCandidate() {
+	public String getCurrentCandidate() {
 		return rankedVotes.get(getCurrentChoice());
+	}
+	
+	/**
+	 * This method gets the ranked candidate at the specified index (Directly from the candidate list).
+	 * If the index is greater than or equal to the list size, it will return an error message and null.
+	 * @param index the index of the candidate
+	 * @return the candidate at the given index
+	 */
+	public String getCandidate(int index) {
+		if(index < getBallotSize())
+		{
+			return rankedVotes.get(index);
+		}
+		else
+		{
+			System.out.printf("Error, index %d is invalid for this ballot", index);
+			return null;
+		}
+	}
+	
+	/**
+	 * This method returns the size of the ballot, i.e. the number of candidates on it.
+	 * @return the size of the ballot
+	 */
+	public int getBallotSize() {
+		return rankedVotes.size();
 	}
 	
 }
