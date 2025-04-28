@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -15,6 +16,7 @@ public class Election {
 	public Election(ArrayList<Ballot> ballotList, ArrayList<Candidate> candidateList, int numOfWinners) {
 		this.ballotList = new ArrayList<>(ballotList);
 		this.candidateList = new ArrayList<>(candidateList);
+		Collections.sort(candidateList); //Sorts the candidate list in order of votes
 		electionWinners = new LinkedList<Candidate>();
 	}
 	
@@ -29,12 +31,15 @@ public class Election {
 	}
 	public void setCandidate(int index, Candidate candidate) {
 		candidateList.set(index, candidate);
+		Collections.sort(candidateList); //Sorts the candidate list in order of votes
 	}
 	public void addCandidate(Candidate candidate) {
 		candidateList.add(candidate);
+		Collections.sort(candidateList); //Sorts the candidate list in order of votes
 	}
 	public void removeCandidate(Candidate candidate) {
 		candidateList.remove(candidate);
+		Collections.sort(candidateList); //Sorts the candidate list in order of votes
 	}
 	public void addWinner(Candidate candidate) {
 		electionWinners.add(candidate);
@@ -65,6 +70,7 @@ public class Election {
 			if(candidate.wonSeat(threshold)) //wonSeat will also redistribute the excess ballots to the next candidates on its own if the candidate won
 			{
 				addWinner(candidate);
+				removeCandidate(candidate);
 				return true; //A candidate won a seat
 			}
 		}
