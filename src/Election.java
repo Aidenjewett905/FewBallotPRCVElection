@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.io.IOException;
 import java.io.File;
 import java.io.PrintWriter;
@@ -8,12 +10,12 @@ public class Election {
 	
 	private ArrayList<Ballot> ballotList; //List of all cast ballots
 	private ArrayList<Candidate> candidateList; //List of all candidates
-	private Candidate[] electionWinners; //Array that contains the winning candidates
+	private Queue<Candidate> electionWinners; //Array that contains the winning candidates
 	
 	public Election(ArrayList<Ballot> ballotList, ArrayList<Candidate> candidateList, int numOfWinners) {
 		this.ballotList = new ArrayList<>(ballotList);
 		this.candidateList = new ArrayList<>(candidateList);
-		electionWinners = new Candidate[numOfWinners];
+		electionWinners = new LinkedList<Candidate>();
 	}
 	
 	public void setBallot(int index, Ballot ballot) {
@@ -34,8 +36,8 @@ public class Election {
 	public void removeCandidate(Candidate candidate) {
 		candidateList.remove(candidate);
 	}
-	public void setWinner(int index, Candidate candidate) {
-		electionWinners[index] = candidate;
+	public void addWinner(Candidate candidate) {
+		electionWinners.add(candidate);
 	}
 	
 	public Ballot getBallot(int index) {
@@ -50,15 +52,27 @@ public class Election {
 		else
 			return candidateList.get(index);
 	}
-	public Candidate getWinner(int index) {
-		if(index >= electionWinners.length || index < 0) 
-			return null;
-		else
-			return electionWinners[index];
+	public Candidate removeWinner() {
+		return electionWinners.poll();
+	}
+	public int getNumWinners() {
+		return electionWinners.size();
 	}
 	
-	public void processWinners() {
-		
+	public boolean processWinners(int threshold) { //Returns true if a seat has been won
+		for(Candidate candidate : candidateList)
+		{
+			if(candidate.wonSeat(threshold)) //wonSeat will also redistribute the excess ballots to the next candidates on its own if the candidate won
+			{
+				addWinner(candidate);
+				return true; //A candidate won a seat
+			}
+		}
+		return false; //No seats were won
 	}
+	
+	//public boolean removeLastPlaceCandidates() {
+	//	
+	//}
 	
 }
