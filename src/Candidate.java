@@ -37,7 +37,7 @@ public class Candidate implements Comparable<Candidate> {
 	 * @param vote the ballot being added
 	 */
 	public void addBallot(Ballot vote) {
-		if(vote.getCurrentCandidate().equals(getName()))
+		if(vote.getCurrentCandidate().equals(this))
 		{
 			currentVotes.add(vote); //Ballot matches candidate
 		}
@@ -62,11 +62,13 @@ public class Candidate implements Comparable<Candidate> {
 		this.totalVotes = totalVotes;
 	}
 	/**
-	 * This method will declare the current candidate as having won a seat.
+	 * This method will declare the current candidate as having won a seat if they meet the threshold.
 	 * The threshold for winning will determine how many ballots will be eliminated, with the ballots after the threshold going to their next choice.
+	 * If the candidate did win a seat, this method will return true, otherwise it will return false.
 	 * @param threshold the threshold number of votes to win a seat
+	 * @return if the candidate won a seat or not
 	 */
-	public void wonSeat(int threshold) {
+	public boolean wonSeat(int threshold) {
 		if(getVotes() >= threshold)
 		{
 			for(int i = 0; i < threshold; i++)
@@ -75,9 +77,16 @@ public class Candidate implements Comparable<Candidate> {
 			}
 			while(getVotes() > threshold)
 			{
-				currentVotes.remove(threshold).advanceChoice();
+				Ballot ballot = currentVotes.remove(threshold);
+				ballot.advanceChoice();
+				if(!ballot.isEliminated()) //If the ballot was not eliminated, add it to the list of votes for its new chosen candidate
+					ballot.getCurrentCandidate().addBallot(ballot);
 			}
+			
+			return true;
 		}
+		else
+			return false;
 	}
 	
 	/**
@@ -115,6 +124,19 @@ public class Candidate implements Comparable<Candidate> {
 	
 	public String toString() {
 		return String.format("Candidate %s with %d votes and %d total votes", getName(), getVotes(), getTotalVotes());
+	}
+	
+	public boolean equals(Object obj) {
+		Candidate cand2;
+		if(obj instanceof Candidate)
+			cand2 = (Candidate)obj;
+		else
+			return false;
+		
+		if(getName().equals(cand2.getName()))
+			return true;
+		else
+			return false;
 	}
 	
 	public int compareTo(Candidate candidate2) {

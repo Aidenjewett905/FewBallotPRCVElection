@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Ballot {
 	
 	public static int numOfBallots = 0;
-	private ArrayList<String> rankedVotes; //Ordered list of the ranked candidates from 1st to last
+	private ArrayList<Candidate> rankedVotes; //Ordered list of the ranked candidates from 1st to last
 	private int choice = 0; //Which of the ranked choices is this ballot currently on, this changes if the candidate before this choice were eliminated
 	private boolean isEliminated;
 	private boolean isAssigned;
@@ -13,8 +13,8 @@ public class Ballot {
 	 * This arraylist should have the candidate names in ranked order from first choice to last choice.
 	 * @param inputVotes an ArrayList of type String with candidates listed in ranked order first to last
 	 */
-	public Ballot(ArrayList<String> inputVotes) {
-		for(String candidate : inputVotes)
+	public Ballot(ArrayList<Candidate> inputVotes) {
+		for(Candidate candidate : inputVotes)
 		{
 			rankedVotes.add(candidate);
 		}
@@ -29,8 +29,8 @@ public class Ballot {
 	 * Any null values in the list will not be added, and will be skipped.
 	 * @param inputVotes an ArrayList of type String with candidates listed in ranked order first to last
 	 */
-	public Ballot(String[] inputVotes) {
-		for(String candidate : inputVotes)
+	public Ballot(Candidate[] inputVotes) {
+		for(Candidate candidate : inputVotes)
 		{
 			if(candidate != null)
 				rankedVotes.add(candidate);
@@ -101,7 +101,7 @@ public class Ballot {
 	 * This method will return the name of the candidate that is currently chosen.
 	 * @return The name of the candidate this ballot counts towards
 	 */
-	public String getCurrentCandidate() {
+	public Candidate getCurrentCandidate() {
 		return rankedVotes.get(getCurrentChoice());
 	}
 	
@@ -111,7 +111,7 @@ public class Ballot {
 	 * @param index the index of the candidate
 	 * @return the candidate at the given index
 	 */
-	public String getCandidate(int index) {
+	public Candidate getCandidate(int index) {
 		if(index < getBallotSize())
 		{
 			return rankedVotes.get(index);
