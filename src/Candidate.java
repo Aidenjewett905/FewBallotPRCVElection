@@ -96,7 +96,10 @@ public class Candidate implements Comparable<Candidate> {
 	public void eliminate() {
 		while(getVotes() > 0)
 		{
-			currentVotes.removeLast().advanceChoice();
+			Ballot ballot = currentVotes.removeFirst();
+			ballot.advanceChoice();
+			if(!ballot.isEliminated()) //If the ballot was not eliminated, add it to the list of votes for its new chosen candidate
+				ballot.getCurrentCandidate().addBallot(ballot);
 		}
 	}
 	
