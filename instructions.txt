@@ -1,4 +1,4 @@
 Do not delete the first lines in the candidates.txt file or ballots.txt file.
-In the settings.txt file, make sure there is an = with a space on both sides before the values, and make sure nothing comes afterwards.
+In the settings.txt file, make sure there is an = between the values, and make sure there are no spaces except around the =
 Do not modify the settings file except for the parameters after the equals sign, as it will likely break.
 Must include the full file path starting from your hard drive unless the text files are in the same folder as the jar file
