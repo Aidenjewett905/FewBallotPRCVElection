@@ -62,6 +62,13 @@ public class Candidate implements Comparable<Candidate> {
 		this.totalVotes = totalVotes;
 	}
 	/**
+	 * This method increments the total number of votes this candidate has received.
+	 * The total votes is used in tiebreakers and is the number of ballots that this candidate shows up on at any position.
+	 */
+	public void incrementTotalVotes() {
+		totalVotes++;
+	}
+	/**
 	 * This method will declare the current candidate as having won a seat if they meet the threshold.
 	 * The threshold for winning will determine how many ballots will be eliminated, with the ballots after the threshold going to their next choice.
 	 * If the candidate did win a seat, this method will return true, otherwise it will return false.

@@ -17,6 +17,7 @@ public class Ballot {
 		for(Candidate candidate : inputVotes)
 		{
 			rankedVotes.add(candidate);
+			candidate.incrementTotalVotes();
 		}
 		numOfBallots++;
 		isEliminated = false;
@@ -33,7 +34,10 @@ public class Ballot {
 		for(Candidate candidate : inputVotes)
 		{
 			if(candidate != null)
+			{
 				rankedVotes.add(candidate);
+				candidate.incrementTotalVotes();
+			}
 		}
 		numOfBallots++;
 		isEliminated = false;
