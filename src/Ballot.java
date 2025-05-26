@@ -6,7 +6,6 @@ public class Ballot {
 	private ArrayList<Candidate> rankedVotes; //Ordered list of the ranked candidates from 1st to last
 	private int choice = 0; //Which of the ranked choices is this ballot currently on, this changes if the candidate before this choice were eliminated
 	private boolean isEliminated;
-	private boolean isAssigned;
 	
 	/**
 	 * This constructor takes an arraylist of type String as a parameter and creates a ballot with those candidates on it.
@@ -21,7 +20,7 @@ public class Ballot {
 		}
 		numOfBallots++;
 		isEliminated = false;
-		isAssigned = false;
+		this.getCurrentCandidate().addBallot(this);
 	}
 	
 	/**
@@ -41,6 +40,7 @@ public class Ballot {
 		}
 		numOfBallots++;
 		isEliminated = false;
+		this.getCurrentCandidate().addBallot(this);
 	}
 	
 	/**
@@ -60,28 +60,11 @@ public class Ballot {
 	}
 	
 	/**
-	 * This method checks if the ballot has been assigned to a candidate
-	 * @return if the ballot has been assigned to a candidate
-	 */
-	public boolean isAssigned() {
-		return isAssigned;
-	}
-	
-	/**
 	 * Eliminates this ballot
 	 */
 	public void eliminate() {
 		isEliminated = true;
-		setAssignment(false);
 		choice = -1;
-	}
-	
-	/**
-	 * Sets the assignment value of this ballot
-	 * @param isAssigned is this ballot currently assigned to a candidates current votes
-	 */
-	public void setAssignment(boolean isAssigned) {
-		this.isAssigned = isAssigned;
 	}
 	
 	/**
@@ -97,7 +80,7 @@ public class Ballot {
 		}
 		else
 		{
-			setAssignment(false);
+			this.getCurrentCandidate().addBallot(this);
 		}
 	}
 	
