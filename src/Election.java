@@ -1,10 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Scanner;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.io.IOException;
-import java.io.File;
 import java.io.PrintWriter;
 
 public class Election {
@@ -202,6 +199,25 @@ public class Election {
 			return false; //Unbreakable tie, no candidates removed
 		}
 		
+	}
+	
+	/**
+	 * Outputs a list of the winning candidates, in order of winning, to the file provided in the PrintWriter
+	 * @param output A PrintWriter object for the output file for the winning candidates
+	 */
+	public void outputWinners(PrintWriter output) {
+		for(int i = 1; getNumWinners() != 0; i++)
+		{
+			String numPostfix = "th";
+			if(i == 1)
+				numPostfix = "st";
+			else if(i == 2)
+				numPostfix = "nd";
+			else if(i == 3)
+				numPostfix = "rd";
+			
+			output.printf("%d%s seat: %s\n", i, numPostfix, removeWinner());
+		}
 	}
 	
 }
