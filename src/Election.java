@@ -220,4 +220,24 @@ public class Election {
 		}
 	}
 	
+	/**
+	 * Outputs a list of the winning candidates, in order of winning, to the file provided in the PrintWriter.
+	 * This is a static variant of the method that takes a queue of winning candidates as an input
+	 * @param output A PrintWriter object for the output file for the winning candidates
+	 */
+	public static void outputWinnersStatic(PrintWriter output, Queue<Candidate> winners) {
+		for(int i = 1; winners.size() != 0; i++)
+		{
+			String numPostfix = "th";
+			if(i == 1)
+				numPostfix = "st";
+			else if(i == 2)
+				numPostfix = "nd";
+			else if(i == 3)
+				numPostfix = "rd";
+			
+			output.printf("%d%s seat: %s\n", i, numPostfix, winners.poll());
+		}
+	}
+	
 }
