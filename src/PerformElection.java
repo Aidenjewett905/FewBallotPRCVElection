@@ -33,15 +33,17 @@ public class PerformElection {
 		
 		settingsInput.next();
 		settingsInput.next();
-		Scanner candidatesInput = new Scanner(new File(settingsInput.nextLine()));
+		Scanner candidatesInput = new Scanner(new File(settingsInput.nextLine().trim()));
 		
 		settingsInput.next();
 		settingsInput.next();
-		Scanner ballotsInput = new Scanner(new File(settingsInput.nextLine()));
+		Scanner ballotsInput = new Scanner(new File(settingsInput.nextLine().trim()));
 		
 		settingsInput.next();
 		settingsInput.next();
-		PrintWriter winnersOutput = new PrintWriter(new File(settingsInput.nextLine()));
+		PrintWriter winnersOutput = new PrintWriter(new File(settingsInput.nextLine().trim()));
+		
+		settingsInput.close();
 		
 		//Get list of candidates
 		candidatesInput.nextLine(); //Clear instruction line
@@ -96,6 +98,46 @@ public class PerformElection {
 			
 			ballotList.add(new Ballot(candidateArray));
 		}
+		
+		System.out.println("DEBUG: Num of ballots = " + ballotList.size());
+		
+		ballotsInput.close();
+		
+		Election election = new Election(ballotList, candidateList, numOfSeats);
+		double thresholdPercentage = (100.0 / (numOfSeats + 1))/100;
+		double voteThresholdDouble = ((thresholdPercentage * ballotList.size()) + 1); //Gets the threshold and cuts off the decimals, it is not supposed to be rounded
+		int voteThreshold = (int)voteThresholdDouble;
+		
+		System.out.println("DEBUG: Threshold Percentage = " + thresholdPercentage);
+		System.out.println("DEBUG: Vote Threshold before + 1 = " + (thresholdPercentage * ballotList.size()));
+		System.out.println("DEBUG: Vote Threshold Double = " + voteThresholdDouble);
+		System.out.println("DEBUG: Vote Threshold = " + voteThreshold);
+		
+		boolean allSeatsWon = false;
+		boolean needsRunoffElection = false;
+		while(!allSeatsWon) //Keep going until all seats are won
+		{
+			if(!election.processWinners(voteThreshold)) //This if statement calls processWinners so the processing is not supposed to happen outside of it
+			{
+				//If nobody won a seat this round, there must be a candidate removed
+				if(!election.removeLastPlaceCandidates(numOfSeats))
+				{
+					//If removeLastPlaceCandidate returns false, there is an unbreakable tie
+					System.out.println("Unbreakable Tie, a runoff election must be held");
+					allSeatsWon = true;
+					needsRunoffElection = true;
+				}
+			}
+			if(election.getNumWinners() == numOfSeats)
+				allSeatsWon = true;
+		}
+		
+		if(needsRunoffElection)
+			winnersOutput.println("There is an unbreakable tie, a runoff must be called to break it.\n");
+		
+		election.outputWinners(winnersOutput, voteThreshold);
+		winnersOutput.close();
+		keyboard.close();
 		
 	}
 
