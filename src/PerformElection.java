@@ -83,23 +83,27 @@ public class PerformElection {
 			boolean candidateAdded = false; //Used to catch an invalid candidate on the ballot
 			for(String candidateName : ballotArray)
 			{
+				//System.out.println("DEBUG Candidate checking: " + candidateName);
 				for(int i = 0; i < candidateList.size(); i++)
 				{
 					if(candidateName.equals(candidateList.get(i).getName()) && !candidateAdded) //!candidateAdded is used to prevent out of bounds due to duplicate candidates
 					{
 						candidateArray[candidateArrayIndex] = candidateList.get(i);
+						//System.out.println("DEBUG Candidate added: " + candidateName);
 						candidateArrayIndex++;
 						candidateAdded = true;
 					}
 				}
 				if(!candidateAdded)
 					System.out.printf("Candidate %s does not exist, they were not added to the ballot", candidateName);
+				else
+					candidateAdded = false;
 			}
 			
 			ballotList.add(new Ballot(candidateArray));
 		}
 		
-		System.out.println("DEBUG: Num of ballots = " + ballotList.size());
+//		System.out.println("DEBUG: Num of ballots = " + ballotList.size());
 		
 		ballotsInput.close();
 		
@@ -108,10 +112,10 @@ public class PerformElection {
 		double voteThresholdDouble = ((thresholdPercentage * ballotList.size()) + 1); //Gets the threshold and cuts off the decimals, it is not supposed to be rounded
 		int voteThreshold = (int)voteThresholdDouble;
 		
-		System.out.println("DEBUG: Threshold Percentage = " + thresholdPercentage);
-		System.out.println("DEBUG: Vote Threshold before + 1 = " + (thresholdPercentage * ballotList.size()));
-		System.out.println("DEBUG: Vote Threshold Double = " + voteThresholdDouble);
-		System.out.println("DEBUG: Vote Threshold = " + voteThreshold);
+//		System.out.println("DEBUG: Threshold Percentage = " + thresholdPercentage);
+//		System.out.println("DEBUG: Vote Threshold before + 1 = " + (thresholdPercentage * ballotList.size()));
+//		System.out.println("DEBUG: Vote Threshold Double = " + voteThresholdDouble);
+//		System.out.println("DEBUG: Vote Threshold = " + voteThreshold);
 		
 		boolean allSeatsWon = false;
 		boolean needsRunoffElection = false;
