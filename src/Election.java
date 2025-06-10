@@ -154,7 +154,7 @@ public class Election {
 		int index = 0;
 		while(!noMoreTied)
 		{
-			if(candidateList.get(index).compareTo(candidateList.get(++index)) == 0) //This increments the index too
+			if((index + 1) < candidateList.size() && candidateList.get(index).compareTo(candidateList.get(++index)) == 0) //This increments the index too
 			{
 				numTied++; //There is another tied candidate
 			}
@@ -196,6 +196,14 @@ public class Election {
 				electionWinners.add(new Candidate("Tied")); //All remaining seats are tied
 			}
 			
+			System.out.println("Tied Candidates: ");
+			while(numTied > 0)
+			{
+				Candidate cand = candidateList.get(--numTied);
+				System.out.println(cand);
+				System.out.println("\t" + cand.getTotalVotes() + " total votes");
+			}
+			
 			return false; //Unbreakable tie, no candidates removed
 		}
 		
@@ -205,7 +213,9 @@ public class Election {
 	 * Outputs a list of the winning candidates, in order of winning, to the file provided in the PrintWriter
 	 * @param output A PrintWriter object for the output file for the winning candidates
 	 */
-	public void outputWinners(PrintWriter output) {
+	public void outputWinners(PrintWriter output, int threshold) {
+		output.printf("Vote threshold was %d\n\n", threshold);
+		
 		for(int i = 1; getNumWinners() != 0; i++)
 		{
 			String numPostfix = "th";
