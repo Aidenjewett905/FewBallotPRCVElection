@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Ballot {
 	
 	public static int numOfBallots = 0;
-	private ArrayList<Candidate> rankedVotes; //Ordered list of the ranked candidates from 1st to last
+	private ArrayList<Candidate> rankedVotes = new ArrayList<Candidate>(); //Ordered list of the ranked candidates from 1st to last
 	private int choice = 0; //Which of the ranked choices is this ballot currently on, this changes if the candidate before this choice were eliminated
 	private boolean isEliminated;
 	
